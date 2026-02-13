@@ -24,6 +24,7 @@
 - [Port](#port)
   - [System port](#system-port)
   - [User port](#user-port)
+  - [Listen on a port](#listen-on-a-port)
 - [Inspect ports](#inspect-ports)
   - [See listening TCP ports](#see-listening-tcp-ports)
   - [Inspect a specific port](#inspect-a-specific-port)
@@ -194,6 +195,14 @@ They are used by system processes that provide widely used types of network serv
 
 A **user port** (or **registered port**) is a [network port](#port) designated for use with a certain protocol or application.
 [[source](https://en.wikipedia.org/wiki/Registered_port)]
+
+### Listen on a port
+
+When a [process](#process) "listens on a port" in `Linux`, it means the process has bound itself to a specific network port number and is waiting for incoming network connections on that port.
+
+The [operating system](./operating-system.md) allocates the port to that process, and any incoming network traffic directed to that port will be handled by the listening process.
+
+This is how [services](#service) like [web servers](./web-development.md), [SSH daemons](./ssh.md#ssh-daemon), or [databases](./database.md) accept connections from clients. A port can only be listened to by one process at a time.
 
 ## Inspect ports
 
